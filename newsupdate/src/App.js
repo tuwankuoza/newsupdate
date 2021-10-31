@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import NavbarApp from "./components/NavbarApp";
 import FooterApp from "./components/FooterApp";
 import Home from './views/Home'
-import Details from './views/Details'
+import SearchNews from "./views/SearchNews";
 
 function App() {
   return (
@@ -12,12 +12,13 @@ function App() {
       <NavbarApp />
       <Switch>
 
-        <Route path="/details">
-          <Details />
+        <Route path="/search">
+          <SearchNews />
         </Route>
+
         <Route path="/"exact>
           <Home />
-        </Route>
+        </Route>   
         
       </Switch>
       <FooterApp />

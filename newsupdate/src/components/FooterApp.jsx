@@ -9,7 +9,7 @@ export default function FooterApp() {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12 item text">
-                          <h3>Nike X</h3>
+                          <h3>News Update</h3>
                           <p>
                             This website is developed for job test purpose,
                             using React, Bootstrap, and some other plugin for
