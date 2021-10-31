@@ -9,6 +9,4 @@ router.get('/news', FetchController.fetchNews)
 
 router.use(authentication)
 
-// add, edit, delete
-
 module.exports = router
