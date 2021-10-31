@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router';
 import { fetchNewsData, setCurrentPage } from '../store/action';
 import { Card, Button } from 'react-bootstrap'
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function NewsCard() {
 
@@ -13,12 +14,16 @@ export default function NewsCard() {
     dispatch(fetchNewsData())
   }, [dispatch])
   
+  const loading = useSelector(state => state.isLoading)
   let data = useSelector(state => state.fetchedData)
   let page = useSelector(state => state.currentPage)
   let maxPage = useSelector(state => state.pageLength)
   let result = data.slice(((page * 8) - 8), ((page * 8)))
   data = result
   
+  if(loading) {
+    return <ClipLoader />
+  }
   return (
     <div className="container">
       <div className="row" style={{paddingLeft: 30}}>

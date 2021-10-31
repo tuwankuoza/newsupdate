@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router';
 import { fetchNewsData, setCurrentIndex } from '../store/action';
 import { Card, Button } from 'react-bootstrap'
+import ClipLoader from "react-spinners/ClipLoader";
 
 export default function Headline() {
 
@@ -13,10 +14,14 @@ export default function Headline() {
     dispatch(fetchNewsData())
   }, [dispatch])
   
+  const loading = useSelector(state => state.isLoading)
   let fetchedData = useSelector(state => state.fetchedData)
   let index = useSelector(state => state.currentIndex)
   let data = fetchedData[index]
   
+  if(loading) {
+    return <ClipLoader />
+  }
   return (
     <div className="container">
       <div style={style.pagination}>
