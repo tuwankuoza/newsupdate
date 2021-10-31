@@ -1,5 +1,5 @@
 const axios = require('axios')
-let { yahooFinanceApi, newsApiOrg } = require('../helpers/apiKey')
+let { newsApiOrg } = require('../helpers/apiKey')
 
 class FetchController {
   static async fetchNews(req, res, next) {
